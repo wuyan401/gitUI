@@ -1,0 +1,16 @@
+{
+  "name": "gitui",
+  "version": "1.0.0",
+  "description": "可视化 Git 管理工具 — 分支管理、版本历史、Diff 查看、远程仓库操作",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js --dev"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "cors": "^2.8.5"
+  },
+  "keywords": ["git", "gui", "visual", "tool"],
+  "license": "MIT"
+}

@@ -1,0 +1,31 @@
+/* ============================================================
+   dark.css — 暗色主题（GitHub Dark 风格）
+   ============================================================ */
+
+[data-theme="dark"] {
+  --bg: #0d1117;
+  --bg-solid: #0d1117;
+  --surface: #161b22;
+  --surface-hover: #21262d;
+  --text: #e6edf3;
+  --text-secondary: #8b949e;
+  --accent: #58a6ff;
+  --accent-hover: #79c0ff;
+  --border: #30363d;
+  --radius: 6px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+
+  /* 导航栏 */
+  --nav-bg: rgba(13, 17, 23, 0.80);
+
+  /* 侧边栏 */
+  --sidebar-bg: #0d1117;
+  --sidebar-hover: rgba(88, 166, 255, 0.08);
+  --sidebar-active: rgba(88, 166, 255, 0.15);
+  --sidebar-text: #8b949e;
+  --sidebar-text-active: #e6edf3;
+}
+
+/* 暗色主题隐藏亮色光斑 */
+[data-theme="dark"] body::before { display: none; }
+[data-theme="dark"] body::after { display: none; }

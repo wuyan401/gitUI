@@ -1,0 +1,39 @@
+/* ============================================================
+   light.css — 亮色主题
+   ============================================================ */
+
+[data-theme="light"] {
+  --bg: linear-gradient(135deg, #f0f4f8 0%, #e8eef5 50%, #f5f3f8 100%);
+  --bg-solid: #f0f4f8;
+  --surface: #ffffff;
+  --surface-hover: #f5f7fa;
+  --text: #1a2332;
+  --text-secondary: #7b8794;
+  --accent: #3498db;
+  --accent-hover: #2980b9;
+  --border: #e2e8f0;
+  --radius: 6px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+
+  /* 导航栏 */
+  --nav-bg: rgba(255, 255, 255, 0.72);
+
+  /* 侧边栏 */
+  --sidebar-bg: #1e2130;
+  --sidebar-hover: rgba(255, 255, 255, 0.08);
+  --sidebar-active: rgba(52, 152, 219, 0.15);
+  --sidebar-text: #8892a4;
+  --sidebar-text-active: #ffffff;
+}
+
+/* 亮色主题的点阵纹理 */
+[data-theme="light"] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.25;
+  background-image: radial-gradient(circle, #b0c4d8 1px, transparent 1px);
+  background-size: 20px 20px;
+}

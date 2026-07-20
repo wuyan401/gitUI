@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitUI — 可视化 Git 管理工具</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/themes/light.css" id="theme-light">
+  <link rel="stylesheet" href="css/themes/dark.css" id="theme-dark" disabled>
+</head>
+<body>
+  <!-- 顶部导航栏 -->
+  <header id="navbar">
+    <div class="nav-left">
+      <a href="#dashboard" class="logo" title="GitUI">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/>
+          <circle cx="12" cy="5" r="2"/>
+          <line x1="12" y1="7" x2="12" y2="9"/>
+          <circle cx="12" cy="19" r="2"/>
+          <line x1="12" y1="15" x2="12" y2="17"/>
+          <path d="M5 12 L9 12"/>
+          <path d="M15 12 L19 12"/>
+        </svg>
+        <span class="logo-text">GitUI</span>
+      </a>
+    </div>
+    <div class="nav-center">
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" id="global-search" placeholder="搜索仓库、分支、提交…">
+      </div>
+      <!-- 仓库快捷切换 + 操作 -->
+      <div id="repo-switcher" style="display:none;align-items:center;gap:6px;margin-left:12px;">
+        <select id="repo-select" class="input" style="width:auto;min-width:140px;height:32px;font-size:13px;"></select>
+        <select id="remote-select" class="input" style="width:auto;min-width:100px;height:32px;font-size:12px;"></select>
+        <button id="btn-quick-pull" class="btn btn-sm" title="拉取">↧ 拉取</button>
+        <button id="btn-quick-push" class="btn btn-sm" title="推送">↥ 推送</button>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button id="btn-help" class="nav-btn" title="帮助">❓</button>
+      <button id="btn-theme" class="nav-btn" title="切换主题">🌓</button>
+      <button id="btn-open-repo" class="nav-btn" title="打开仓库">📂</button>
+      <button id="btn-settings" class="nav-btn" title="设置">⚙</button>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <!-- 左侧面板 -->
+    <aside id="sidebar">
+      <nav class="panel-nav">
+        <a href="#dashboard" class="panel-link active" data-panel="dashboard" title="概览">
+          <span class="panel-icon">🏠</span>
+          <span class="panel-label">概览</span>
+        </a>
+        <a href="#branches" class="panel-link" data-panel="branches" title="分支">
+          <span class="panel-icon">🌿</span>
+          <span class="panel-label">分支</span>
+        </a>
+        <a href="#history" class="panel-link" data-panel="history" title="历史">
+          <span class="panel-icon">📜</span>
+          <span class="panel-label">历史</span>
+        </a>
+        <a href="#diff" class="panel-link" data-panel="diff" title="差异">
+          <span class="panel-icon">📊</span>
+          <span class="panel-label">差异</span>
+        </a>
+        <a href="#remote" class="panel-link" data-panel="remote" title="远程">
+          <span class="panel-icon">☁️</span>
+          <span class="panel-label">远程</span>
+        </a>
+        <a href="#clone" class="panel-link" data-panel="clone" title="克隆">
+          <span class="panel-icon">📥</span>
+          <span class="panel-label">克隆</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- 右侧内容区 -->
+    <main id="panel-content">
+      <!-- 模块动态加载到此 -->
+    </main>
+  </div>
+
+  <!-- JS 脚本 -->
+  <script src="js/theme.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/modules/dashboard.js"></script>
+  <script src="js/modules/branches.js"></script>
+  <script src="js/modules/history.js"></script>
+  <script src="js/modules/diff.js"></script>
+  <script src="js/modules/remote.js"></script>
+  <script src="js/modules/clone.js"></script>
+  <script src="js/modules/settings.js"></script>
+</body>
+</html>
